@@ -3,7 +3,7 @@ install.packages("readxl")
 library(readxl)
 #####Find the path to the excel file#######
 file.choose()
-#########Data analysis of entropy data Nasopharyngeal samples##################
+#########Data analysis of entropy data Nasopharyngeal samples (S1.xlsx)##################
 #########Read excel file de Nasopharyngeal entropy data ##########
 read_excel("/../S1.xlsx")
 ##########Name the excel file###############
@@ -12,7 +12,7 @@ nasofaringeal<-read_excel("/../S1.xlsx")
 View(nasofaringeal)
 ######Tracheal aspirates data #######
 file.choose()
-#########Data analysis of entropy data Tracheal samples##################
+#########Data analysis of entropy data Tracheal samples (S2.xlsx)##################
 #########Read excel file de Tracheal entropy data ##########
 read_excel("/../S2.xlsx")
 ##########Name the excel file###############
