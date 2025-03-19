@@ -5,18 +5,18 @@ library(readxl)
 file.choose()
 #########Data analysis of entropy data Nasopharyngeal samples##################
 #########Read excel file de Nasopharyngeal entropy data ##########
-read_excel("/Users/victorrojas/Desktop/Manuscrito final sars cov-2/manuscrito final/new data /1/ EU/nasoentropydata_eu.xlsx")
+read_excel("/../S1.xlsx")
 ##########Name the excel file###############
-nasofaringeal<-read_excel("//Users/victorrojas/Desktop/Manuscrito final sars cov-2/manuscrito final/new data /1/ EU/nasoentropydata_eu.xlsx")
+nasofaringeal<-read_excel("/../S1.xlsx")
 #########View excel file##########
 View(nasofaringeal)
 ######Tracheal aspirates data #######
 file.choose()
 #########Data analysis of entropy data Tracheal samples##################
 #########Read excel file de Tracheal entropy data ##########
-read_excel("/Users/victorrojas/Desktop/Manuscrito final sars cov-2/manuscrito final/new data /1/ EU/lungentropydata.xlsx")
+read_excel("/../S2.xlsx")
 ##########Name the excel file###############
-lung<-read_excel("/Users/victorrojas/Desktop/Manuscrito final sars cov-2/manuscrito final/new data /1/ EU/lungentropydata.xlsx")
+lung<-read_excel("/../S2.xlsx")
 #########View excel file##########
 View(lung)
 #########Box plot of entropies in the different types of samples############
@@ -52,24 +52,4 @@ summary(lungentropy)
 hist(lungentropy$Entropy)
 ########Wilcoxon test#########
 wilcox.test(nasoentropy$Entropy,lungentropy$Entropy)
-################Additional tests: Mutation count in N and NSP15 gen from Nasopharingeal samples###################
-library(readxl)
-file.choose()
-read_excel("/Users/victorrojas/Desktop/Manuscrito final sars cov-2/Acta biomedica (Ru)/new data /1/ EU/Reporte de variantes /covsurver_result_naso_eu.xls")
-mutations<-read_excel("/Users/victorrojas/Desktop/Manuscrito final sars cov-2/Acta biomedica (Ru)/new data /1/ EU/Reporte de variantes /covsurver_result_naso_eu.xls")
-View(mutations)
-class(mutations$ExistingMutList)
-table(mutations$ExistingMutList)
-######mutations of N and NSP15 gen. In $ExistingMutList count all with begin with N#####
-subsetmut<-subset(mutations, is.character(ExistingMutList) & grepl("^N", ExistingMutList))
-print(subsetmut$ExistingMutList)
-################Mutation count in N gen from Tracheal aspirates samples###################
-library(readxl)
-file.choose()
-read_excel("/Users/victorrojas/Desktop/Manuscrito final sars cov-2/Acta biomedica (Ru)/new data /1/ EU/Reporte de variantes /covsurver_result_lung_eu.xls")
-mutationlung<-read_excel("/Users/victorrojas/Desktop/Manuscrito final sars cov-2/Acta biomedica (Ru)/new data /1/ EU/Reporte de variantes /covsurver_result_lung_eu.xls")
-View(mutationlung)
-####mutations of N gen. In $ExistingMutList count all with begin with N#####
-subsetmut2<-subset(mutationlung, is.character(ExistingMutList) & grepl("^N", ExistingMutList))
-print(subsetmut2$ExistingMutList)
 ####End###
