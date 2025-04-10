@@ -46,10 +46,13 @@ boxplot(nasoentropy2$Entropy,lungentropy$Entropy,
         ylab= "Diversity",names = c("Nasopharyngeal",
                                     "Tracheal aspirate"),col = rainbow(ncol(trees)))
 ##Summary##
-summary(nasoentropy)
+summary(nasoentropy2)
 summary(lungentropy)
 ###Histogram for distribution of lungentropy###
 hist(lungentropy$Entropy)
+######Normality test for both data sets#######
+shapiro.test (nasoentropy2)
+shapiro.test (lungentropy)
 ########Wilcoxon test#########
 wilcox.test(nasoentropy$Entropy,lungentropy$Entropy)
 ####End###
