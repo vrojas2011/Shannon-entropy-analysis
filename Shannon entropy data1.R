@@ -54,5 +54,5 @@ hist(lungentropy$Entropy)
 shapiro.test (nasoentropy2)
 shapiro.test (lungentropy)
 ########Wilcoxon test#########
-wilcox.test(nasoentropy$Entropy,lungentropy$Entropy)
+wilcox.test(nasoentropy2$Entropy,lungentropy$Entropy)
 ####End###
